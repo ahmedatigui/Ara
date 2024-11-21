@@ -143,11 +143,3 @@ onUnmounted(() => {
   <button @click="editor.readOnly.toggle()">preview</button>
   <div id="editorjs" ref="editorjsRef"></div>
 </template>
-
-<style>
-/*button {                                                                                    
-    position: fixed;
-    top: 1%;
-    left: 1%;
-  }*/
-</style>

@@ -42,15 +42,34 @@ console.log(apiData)
 </script>
 
 <template>
-  <div>
-    <h1>Post {{ id }}</h1>
-    <p>This is the post with ID: {{ id }}</p>
-    <p>Wut</p>
-    <code>{{ config.DB_WUT }}</code>
-    <p>{{ JSON.stringify(apiData, null, 2) }}</p>
-    <p>{{ routeData }}</p>
-    <!-- <pre>{{apiData && apiData.value.blogs}}</pre>  -->
-    <Viewer v-if="dataFound" :modelValue="JSON.parse(postContent)" placeholder="Loading post content..."
-      :readonly="true" />
+  <div class="container mx-auto px-6 py-8">
+    <!-- Post Title -->
+    <h1 class="text-2xl font-bold text-gray-800 mb-4">Post {{ id }}</h1>
+
+    <!-- Route Data -->
+    <div class="bg-gray-100 text-gray-700 p-4 rounded-lg mb-6">
+      <h2 class="text-lg font-medium mb-2">Route Data</h2>
+      <p class="text-sm">{{ routeData }}</p>
+    </div>
+
+    <!-- Viewer Component -->
+    <div class="bg-white shadow-md rounded-lg border border-gray-200 p-6">
+      <h2 class="text-lg font-semibold text-gray-800 mb-4">Post Content</h2>
+      <Viewer
+        v-if="dataFound"
+        :modelValue="JSON.parse(postContent)"
+        placeholder="Loading post content..."
+        :readonly="true"
+        class="min-h-[200px]"
+      />
+    </div>
+
+    <!-- Debugging Data (Optional) -->
+    <div v-if="apiData" class="mt-6">
+      <h3 class="text-md font-medium text-gray-700 mb-2">Debugging Data</h3>
+      <pre class="bg-gray-50 text-sm text-gray-600 p-4 rounded-lg">
+{{ JSON.stringify(apiData, null, 2) }}
+      </pre>
+    </div>
   </div>
 </template>

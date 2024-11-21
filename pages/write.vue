@@ -60,7 +60,7 @@ const publishPost = async () => {
 }
 
 </script>
-<template>
+<!--<template>
   <div>
     <ClientOnly fallback-tag="span" fallback="Loading editor...">
       <button @click="publishPost">Publish</button>
@@ -68,4 +68,37 @@ const publishPost = async () => {
       <pre>{{ editorContent }}</pre>
     </ClientOnly>
   </div>
+</template>-->
+
+
+<template>
+  <div class="container mx-auto px-6 py-8">
+    <!-- Publish Button and Editor -->
+    <div class="space-y-6">
+      <!-- Publish Button -->
+      <ClientOnly fallback-tag="span" fallback="Loading editor...">
+        <Button variant="default" class="px-6 py-3" @click="publishPost">
+          Publish
+        </Button>
+
+        <!-- Editor -->
+        <div class="bg-white shadow-md rounded-lg border border-gray-200 p-4">
+          <Editor
+            :modelValue="editorContent"
+            placeholder="Say it again!"
+            :readonly="false"
+          />
+        </div>
+
+        <!-- Editor Content Preview -->
+        <div class="mt-4 p-4 bg-gray-100 rounded-lg">
+          <h2 class="text-lg font-medium text-gray-700 mb-2">Editor Content</h2>
+          <pre class="text-sm text-gray-600 bg-gray-50 p-4 rounded-lg">
+{{ editorContent }}
+          </pre>
+        </div>
+      </ClientOnly>
+    </div>
+  </div>
 </template>
+

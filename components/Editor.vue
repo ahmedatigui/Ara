@@ -100,6 +100,7 @@ onMounted(() => {
         class: Header,
         config: {
           placeholder: 'Enter a header',
+          levels: [1, 2, 3, 4],
         },
       },
       quote: {
@@ -190,13 +191,33 @@ onUnmounted(() => {
 </script>
 <template>
   <button @click="editor.readOnly.toggle()">preview</button>
-  <div id="editorjs" ref="editorjsRef"></div>
+  <div class="editorjs min-h-[200px] text-gray-800" id="editorjs" ref="editorjsRef"></div>
 </template>
 
 <style>
-/*button {                                                                                    
-    position: fixed;
-    top: 1%;
-    left: 1%;
-  }*/
+/* Ensure headers have proper sizes */
+h1.ce-header {
+  font-size: 2.25rem; /* Tailwind text-3xl */
+  font-weight: 700;   /* Bold */
+  margin-bottom: 0.5rem;
+}
+
+h2.ce-header {
+  font-size: 1.875rem; /* Tailwind text-2xl */
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+h3.ce-header {
+  font-size: 1.5rem; /* Tailwind text-xl */
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+/* Ensure paragraph and default blocks are styled correctly */
+h4.ce-header {
+  font-size: 1.25rem; /* Tailwind text-base */
+  line-height: 1.5rem; /* Tailwind leading-relaxed */
+  margin-bottom: 1rem;
+}
 </style>
