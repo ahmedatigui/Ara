@@ -26,6 +26,7 @@ const login = async () => {
 
 watchEffect(() => {
   if (user.value) {
+    console.log(user.value)
     navigateTo('/')
   }
 })

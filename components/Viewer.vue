@@ -116,7 +116,7 @@ onMounted(() => {
       },
       image: SimpleImage,
       embed: Embed,
-      // audioPlayer: AudioPlayer,                                                            
+      // audioPlayer: AudioPlayer,
       Math: {
         class: EJLaTeX,
         shortcut: 'CMD+SHIFT+M',
@@ -140,6 +140,6 @@ onUnmounted(() => {
 })
 </script>
 <template>
-  <button @click="editor.readOnly.toggle()">preview</button>
+  <!--<button @click="editor.readOnly.toggle()">preview</button>-->
   <div id="editorjs" ref="editorjsRef"></div>
 </template>

@@ -5,13 +5,17 @@ const user = useSupabaseUser()
 const { auth } = useSupabaseClient()
 
 const signOut = async () => {
-  const { error } = await auth.signOut()
-  if (error) console.log(error)
-  navigateTo('/login')
+  const data = await auth.signOut()
+  if (data?.error) console.log(error)
+  else {
+    user.value = null;
+    console.log(data, user.value)
+    navigateTo('/login')
+  }
 }
 
 if (user?.value) { console.log('User', user) }
-const isLoggedIn = user?.value
+const isLoggedIn = ref(user?.value);
 const { data, error } = await auth.getSession()
 console.log("session data", data)
 const displayName = data?.session?.user?.user_metadata?.display_name ?? "No username";

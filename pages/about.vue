@@ -1,3 +1,11 @@
+<script setup lang="ts">                                                                   
+useHead({                                                                                  
+  title: 'About Us',                                                                       
+  meta: [                                                                                  
+    { name: 'description', content: 'Learn more about our company, mission, and values.' } 
+  ]                                                                                        
+});                                                                                        
+</script>
 <template>
   <div class="about-page">
     <h1>About Us</h1>
@@ -17,17 +25,6 @@
     </section>
   </div>
 </template>
-
-<script setup lang="ts">
-import { definePageMeta } from '#imports';
-
-useHead({
-  title: 'About Us',
-  meta: [
-    { name: 'description', content: 'Learn more about our company, mission, and values.' }
-  ]
-});
-</script>
 
 <style scoped>
 .about-page {
