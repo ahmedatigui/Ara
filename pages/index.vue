@@ -29,7 +29,6 @@ if (apiError) console.log(apiError)
         <p class="text-gray-500 text-sm mb-4">Created At: {{ new Date(item.created_at).toLocaleDateString() }}</p>
         <p class="text-gray-500 text-sm mb-4">Updated At: {{ new Date(item.updated_at).toLocaleDateString() }}</p>
         <p class="text-gray-500 text-sm mb-4">Author ID: {{ item.author_id }}</p>
-        
         <NuxtLink
           :to="`/posts/${item.post_id}`"
           class="text-indigo-600 hover:text-indigo-800 font-medium text-sm"

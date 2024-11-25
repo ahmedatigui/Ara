@@ -5,6 +5,7 @@ export default defineEventHandler(async (event) => {
   const client = await serverSupabaseClient(event);
   // const user = serverSupabaseUser()
   const { data: blogs } = await client.from('Blogs').select('*');
+
   const titleReplacedSpaces = body.title.toLowerCase().replace(/ /g, '-');
   const santizedTitle = titleReplacedSpaces.replace(/[^a-zA-Z0-9\-_.,\-]/g, '');
   const postId = `${santizedTitle}-${blogs?.length ?? body.content.time}`;
