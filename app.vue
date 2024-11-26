@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { computed } from "vue"
 
 const user = useSupabaseUser()
-const  layout = computed(() => user?.value ? "default" : "auth");
+const layout = computed(() => user?.value ? "auth" : "unauth");
 </script>
 <template>
   <div>

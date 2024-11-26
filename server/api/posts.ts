@@ -5,10 +5,14 @@ export default defineEventHandler(async (event) => {
   const user = await serverSupabaseUser(event)
 
   const config = useRuntimeConfig();
-  const { data } = await client.from('Blogs').select('*').eq("author_id", user.id).order('updated_at', { ascending: false });
+  const { data } = await client
+    .from('Blogs')
+    .select('*')
+    .eq("author_username", user?.user_metadata?.display_name)
+    .order('updated_at', { ascending: false });
 
-  //console.log("User", JSON.stringify(user, null, 2))
-  //console.log("User id", JSON.stringify(user.id))
+  console.log("posts User", JSON.stringify(user, null, 2))
+  console.log("posts Username", user?.user_metadata?.display_name)
 
   return {
     api: 'Hello, World',

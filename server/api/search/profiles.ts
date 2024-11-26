@@ -19,10 +19,12 @@ export default defineEventHandler(async (event) => {
   const { data: posts } = await client
     .from('Blogs')
     .select('*')
-    .eq('author_id', userData[0]?.user_id)
+    .eq('author_username', userData[0]?.username)
     .order('updated_at', { ascending: false });
 
-  console.log('user', JSON.stringify(userData, null, 2), JSON.stringify(posts, null, 2));
+  console.log('profile user: ', userData[0])
+  console.log('profile user id: ', userData[0]?.user_id)
+  //console.log('user', JSON.stringify(userData, null, 2), JSON.stringify(posts, null, 2));
 
   return {
     api: 'Hello, Profiles!',
