@@ -40,7 +40,7 @@ const navigationMenuTriggerStyle = () =>
 <template>                                                                                                                                                                                  
   <main class="min-h-screen bg-gray-50 text-gray-800">                                                                                                                                      
     <header class="bg-white shadow">                                                                                                                                                        
-      <nav class="container mx-auto flex items-center justify-between py-4 px-6">
+      <nav class="container mx-auto flex items-center justify-center py-4 px-6">
     <ul class="flex items-center space-x-4">
       <!-- Home Link -->
       <li>

@@ -1,9 +1,9 @@
-<script setup lang="ts">                                                                   
-useHead({                                                                                  
-  title: 'About Us',                                                                       
-  meta: [                                                                                  
-    { name: 'description', content: 'Learn more about our company, mission, and values.' } 
-  ]                                                                                        
+<script setup lang="ts">
+useHead({
+  title: 'About Us',
+  meta: [
+    { name: 'description', content: 'Learn more about our company, mission, and values.' }
+  ]
 });                                                                                        
 </script>
 <template>

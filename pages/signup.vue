@@ -31,15 +31,15 @@ const signup = async () => {
     if (error) throw error;
     console.log(data)
     successMessage.value = "Check your email for confirmation"
-    if (data){
-  const apiData = await $fetch('/api/me', { 
-    method: 'POST',
-    body: JSON.stringify({
+    if (data) {
+      const apiData = await $fetch('/api/me', {
+        method: 'POST',
+        body: JSON.stringify({
           username: displayname.value,
           desc: description.value,
           email: email.value,
-    })
-  })
+        })
+      })
 
     }
   } catch (error: unknown) {
@@ -136,78 +136,52 @@ watchEffect(() => {
             Sign Up
           </Button>
         </div>-->
-    <!-- Display Name Field -->
-    <div class="space-y-2">
-      <label for="displayname" class="block text-sm font-medium text-gray-700">
-        Display Name
-      </label>
-      <input
-        type="text"
-        id="displayname"
-        name="displayname"
-        v-model="displayname"
-        required
-        placeholder="Enter your display name"
-        class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm"
-      />
-    </div>
+        <!-- Display Name Field -->
+        <div class="space-y-2">
+          <label for="displayname" class="block text-sm font-medium text-gray-700">
+            Display Name
+          </label>
+          <input type="text" id="displayname" name="displayname" v-model="displayname" required
+            placeholder="Enter your display name"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm" />
+        </div>
 
-    <!-- Short Description Field -->
-    <div class="space-y-2">
-      <label for="description" class="block text-sm font-medium text-gray-700">
-        Short Description
-      </label>
-      <textarea
-        id="description"
-        name="description"
-        v-model="description"
-        required
-        placeholder="Tell us something about yourself"
-        class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm"
-      ></textarea>
-    </div>
+        <!-- Short Description Field -->
+        <div class="space-y-2">
+          <label for="description" class="block text-sm font-medium text-gray-700">
+            Short Description
+          </label>
+          <textarea id="description" name="description" v-model="description" required
+            placeholder="Tell us something about yourself"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm"></textarea>
+        </div>
 
-    <!-- Email Field -->
-    <div class="space-y-2">
-      <label for="email" class="block text-sm font-medium text-gray-700">
-        Email
-      </label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        v-model="email"
-        required
-        placeholder="Enter your email"
-        class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm"
-      />
-    </div>
+        <!-- Email Field -->
+        <div class="space-y-2">
+          <label for="email" class="block text-sm font-medium text-gray-700">
+            Email
+          </label>
+          <input type="email" id="email" name="email" v-model="email" required placeholder="Enter your email"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm" />
+        </div>
 
-    <!-- Password Field -->
-    <div class="space-y-2">
-      <label for="password" class="block text-sm font-medium text-gray-700">
-        Password
-      </label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        v-model="password"
-        required
-        placeholder="Enter your password"
-        class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm"
-      />
-    </div>
+        <!-- Password Field -->
+        <div class="space-y-2">
+          <label for="password" class="block text-sm font-medium text-gray-700">
+            Password
+          </label>
+          <input type="password" id="password" name="password" v-model="password" required
+            placeholder="Enter your password"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm" />
+        </div>
 
-    <!-- Submit Button -->
-    <div>
-      <button
-        type="submit"
-        class="w-full px-4 py-2 bg-indigo-600 text-white font-medium text-sm rounded-md hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-      >
-        Sign Up
-      </button>
-    </div>
+        <!-- Submit Button -->
+        <div>
+          <button type="submit"
+            class="w-full px-4 py-2 bg-indigo-600 text-white font-medium text-sm rounded-md hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            Sign Up
+          </button>
+        </div>
 
 
 
@@ -215,9 +189,9 @@ watchEffect(() => {
 
       <!-- Login Link -->
       <div class="text-center mt-6 text-sm text-gray-600">
-        Already have an account? <NuxtLink to="/login" class="text-indigo-600 hover:text-indigo-800 font-medium">Login</NuxtLink>
+        Already have an account? <NuxtLink to="/login" class="text-indigo-600 hover:text-indigo-800 font-medium">Login
+        </NuxtLink>
       </div>
     </div>
   </section>
 </template>
-

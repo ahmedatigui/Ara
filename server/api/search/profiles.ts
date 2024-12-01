@@ -1,4 +1,4 @@
-import { serverSupabaseUser, serverSupabaseClient } from '#supabase/server'; 
+import { serverSupabaseUser, serverSupabaseClient } from '#supabase/server';
 import type { Database } from '../../../types/database.types.ts';
 
 export default defineEventHandler(async (event) => {
@@ -8,7 +8,9 @@ export default defineEventHandler(async (event) => {
 
   //console.log("USER: ", user.value);
 
-  const sanitizedQuery = String(query).replace(/ /g, '-').replace(/[^a-zA-Z0-9-]/g, '');
+  const sanitizedQuery = String(query)
+    .replace(/ /g, '-')
+    .replace(/[^a-zA-Z0-9-]/g, '');
   console.log(JSON.stringify(query, null, 2), sanitizedQuery);
   const { data: userData } = await client
     .from('Profiles')
@@ -22,8 +24,8 @@ export default defineEventHandler(async (event) => {
     .eq('author_username', userData[0]?.username)
     .order('updated_at', { ascending: false });
 
-  console.log('profile user: ', userData[0])
-  console.log('profile user id: ', userData[0]?.user_id)
+  console.log('profile user: ', userData[0]);
+  console.log('profile user id: ', userData[0]?.user_id);
   //console.log('user', JSON.stringify(userData, null, 2), JSON.stringify(posts, null, 2));
 
   return {

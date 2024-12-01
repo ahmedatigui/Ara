@@ -60,15 +60,6 @@ const publishPost = async () => {
 }
 
 </script>
-<!--<template>
-  <div>
-    <ClientOnly fallback-tag="span" fallback="Loading editor...">
-      <button @click="publishPost">Publish</button>
-      <Editor :modelValue="editorContent" placeholder="say it again!" readonly="false" />
-      <pre>{{ editorContent }}</pre>
-    </ClientOnly>
-  </div>
-</template>-->
 
 
 <template>
@@ -83,11 +74,7 @@ const publishPost = async () => {
 
         <!-- Editor -->
         <div class="bg-white shadow-md rounded-lg border border-gray-200 p-4">
-          <Editor
-            :modelValue="editorContent"
-            placeholder="Say it again!"
-            :readonly="false"
-          />
+          <Editor :modelValue="editorContent" placeholder="Say it again!" :readonly="false" />
         </div>
 
         <!-- Editor Content Preview -->
@@ -101,4 +88,3 @@ const publishPost = async () => {
     </div>
   </div>
 </template>
-
